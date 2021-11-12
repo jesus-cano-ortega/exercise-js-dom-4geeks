@@ -1,6 +1,6 @@
 # <img src="https://github.com/jesus-cano-ortega/js-introduction-exercises/blob/main/assets/resources/img/face.png" width="45" alt="Personal Logo"> DOM Exercises
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io#https://github.com/4GeeksAcademy/html-hello.git)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://tan-wildebeest-sjz9lphu.ws-eu18.gitpod.io/)
 
 El objetivo de este proyecto es poner en práctica las habilidad para modificar y manipular el DOM. El DOM (Document Object Model) es la estructura del documento HTML, la cual esta formada por las múltiples etiquetas anidadas una dentro de otra, formando un ábrol de etiquetas relacionadas entre sí, denominado árbol DOM, o simplemente DOM. 
 
