@@ -1,44 +1,61 @@
 const container = document.getElementById("container");
 const input = document.getElementById("input");
-
-//TODO: crea una funcion que elimine de pantalla la columna que corresponda con el indice introducido en deleteInput
-// si pongo un id que no existe debe mostrar un error
+const deleteInput = document.getElementById("deleteInput");
 
 document
   .querySelector("#myForm")
   .addEventListener("submit", ev => ev.preventDefault());
 
-document.getElementById("button").addEventListener("click", () => {
-  //crear el elemento
-  let div = document.createElement("div");
-  div.setAttribute("class", "col");
+//Crear una funcion que elimine del DOM la columna que corresponda con el indice introducido en deleteInput
+deleteInput.addEventListener("keyup", event => {
+  if (event.keyCode === 13) {
+    let inputValue = deleteInput.value;
 
-  //TODO: CREAR UN HN AL AZAR (H1-H2...H6)
-  div.innerHTML = `<h1>${input.value.toUpperCase()}</h1>`;
-  container.appendChild(div);
-});
-
-document.getElementById("deleteButton").addEventListener("click", () => {
-  //comprobar hijos
-  if (container.childNodes.length > 0) {
-    //eliminar el ultimo
-    //TODO: CREAR LA FUNCIONALIDAD PARA ELIMIANR EL ULTIMO NODO SIN QUE NUNCA DE ERROR
-
-    let columnas = document.querySelectorAll("col");
-    container.removeChild();
-  } else {
-    console.log("No hay nadie a quien eliminar");
+    //Si el valor introducido no es un número o es inferior a 0 (negativo), devolvemos error
+    if (isNaN(inputValue) || inputValue < 0)
+      console.error("Tipo de valor introducido erróneo");
+    else {
+      //Si la longitud del array es mayor a 0 y el valor no excede la longitud, eliminamos la columna
+      container.childNodes.length > 0 &&
+      inputValue < container.childNodes.length
+        ? container.removeChild(container.childNodes[inputValue])
+        : console.error("Límite del array excedido");
+    }
   }
 });
 
-//crear evento
-input.addEventListener("keyup", ev => {
-  if (ev.keyCode == 13) {
-    console.log("Estamos cambiando el evento");
-    //TODO: REFACTORIZAR
-    for (let value of container.childNodes) {
-      console.log(value);
+//Crear función que cree un nuevo div con un título de tamaño aleatorio Hn
+document.getElementById("button").addEventListener("click", () => {
+  let div = document.createElement("div");
+  //div.setAttribute("class", "col"); --> en caso de querer aplicar clases
+
+  let value = Math.floor(Math.random() * 6) + 1;
+
+  //Creamos el div en mayúscula con un valor de título aleatorio mediante Math.floor
+  div.innerHTML = `<h${value}>${input.value.toUpperCase()}</h${value}>`;
+  container.appendChild(div);
+});
+
+//Crear función que elimine el último nodo sin dar error
+document.getElementById("deleteButton").addEventListener("click", () => {
+  //Comprobamos si la longitud del array es superior a 0
+  if (container.childNodes.length > 0) {
+    //En caso afirmativo, eliminamos el último nodo
+    container.removeChild(container.lastChild);
+  } else {
+    //En caso contrario, pasamos un mensaje por consola
+    console.log("No hay ningún elemento a eliminar");
+  }
+});
+
+//Crear función que aplique estilos a todas las columnas, variando así el evento
+input.addEventListener("keyup", event => {
+  if (event.keyCode == 13) {
+    //console.log(container.childNodes);
+    let arrayChild = container.childNodes;
+
+    arrayChild.forEach(value => {
       value.innerHTML = `<h1>${input.value.toUpperCase()}</h1>`;
-    }
+    });
   }
 });
