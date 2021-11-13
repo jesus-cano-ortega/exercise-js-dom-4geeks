@@ -2,27 +2,28 @@
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://tan-wildebeest-sjz9lphu.ws-eu18.gitpod.io/)
 
-El objetivo de este proyecto es poner en práctica las habilidad para modificar y manipular el DOM. El DOM (Document Object Model) es la estructura del documento HTML, la cual esta formada por las múltiples etiquetas anidadas una dentro de otra, formando un ábrol de etiquetas relacionadas entre sí, denominado árbol DOM, o simplemente DOM. 
+The objective of this project is to put into practice the skills to modify and manipulate the DOM. The DOM (Document Object Model) is the structure of the HTML document, which is made up of multiple tags nested one within another, forming a tree of related tags, called the DOM tree, or to simplify DOM.
 
-En Javascript, cuando nos referimos al DOM nos referimos a esta estructura, que podemos modificar de forma dinámica desde Javascript, añadiendo nuevas etiquetas, modificando o eliminando otras, cambiando sus atributos HTML, añadiendo clases, cambiando el contenido de texto, etc...
+In Javascript, when we refer to the DOM we refer to this structure, which we can modify dynamically with Javascript: adding new tags, modifying or eliminating others, changing its HTML attributes, adding classes, changing the text content, etc...
 
-### Ejercicios 
+### Exercises 
 
-Dado un documento index.html, se debe el archivo app.js para que modifique el DOM de la siguiente forma: 
+Given an index.html document, the app.js file must modify the DOM in order to:
 
-1. Crear una funcion que elimine del DOM la columna que corresponda con el indice introducido en deleteInput
-2. Crear función que cree un nuevo div con un título de tamaño aleatorio Hn
-3. Crear función que elimine el último nodo sin dar error
-4. Crear función que aplique estilos a todas las columnas, variando así el evento
+1. Create a function that removes from the DOM the column that corresponds to the index entered in deleteInput
+2. Create a function that creates new div with random size title Hn
+3. Create a function that removes the last node without giving error
+4. Create a function that applies styles to all columns varying the event
 
 
-##### RECUERDA: 
-Una vez que terminado el progreso y flujo del proyecto, debes hacer commit y push al repositorio en remoto, mediante el siguiente comando: 
+##### REMEMBER: 
+
+Once the progress and flow of the project is finished, you must commit and push the repository remotely, using the following command:
 
 ```
 
 $ git add . 
-$ git commit -m "Mensaje"
-$ git push origin repo-remoto
+$ git commit -m "Message"
+$ git push origin repo-remote
 
 ```
